@@ -11,17 +11,25 @@ namespace ConsoleApp1.Models
         public static int TotalCount = 1000;
 
         public string No { get; set; }
-        public string FullName { get; set; }
-        public Employee(string name, string surname)
-        {
-            FullName = name + surname;
-        }
+        public string FullName;
+       
+       
+      
+
         public string Position { get; set; }
         public int Salary { get; set; }
         public string DepartmentName { get; set; }
-        public Employee(string fullname, string position, int salary, string departmentName)
+        public string Name { get; set; }
+        public string Surname { get; set; }
+
+
+        public Employee(string name, string surname, string position, int salary, string departmentName)
+
         {
-            FullName = 
+            Name = name;
+            Surname = surname;
+
+            FullName = Name + " " + Surname;
             Position = position;
             DepartmentName = departmentName;
             Salary = salary;
@@ -32,6 +40,6 @@ namespace ConsoleApp1.Models
         }
         public override string ToString()
         {
-            return $"{FullName},{Salary},{DepartmentName},{Position},{No}";
+            return $"{No},{Salary},{DepartmentName},{Position},{FullName}";
         }
     }  }

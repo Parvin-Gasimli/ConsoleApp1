@@ -12,9 +12,13 @@ namespace ConsoleApp1
         
         static void Main(string[] args)
         {
+            Employee employee1 = new Employee("Pervin","Qasimli", "developer", 1300, "Code academy");
+
+            Console.WriteLine();
             
-            
-            
+
+
+
         }
     }
 }
