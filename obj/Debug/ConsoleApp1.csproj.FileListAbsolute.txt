@@ -1,0 +1,7 @@
+C:\Users\pervi\Desktop\parvin qasimli layihe\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\pervi\Desktop\parvin qasimli layihe\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\pervi\Desktop\parvin qasimli layihe\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\pervi\Desktop\parvin qasimli layihe\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.AssemblyReference.cache
+C:\Users\pervi\Desktop\parvin qasimli layihe\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\pervi\Desktop\parvin qasimli layihe\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\pervi\Desktop\parvin qasimli layihe\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
