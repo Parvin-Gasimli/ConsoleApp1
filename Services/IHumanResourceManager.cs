@@ -11,19 +11,17 @@ namespace ConsoleApp1.Services
 
     {
         //created the Department list 
-        List<Department> department { get; set; }
 
-
-        void AddDepartment(string name, int workerlimit, int salarylimit);
+        void AddDepartment(string name, int workerlimit, double salarylimit);
         void EditDepartaments(string name, string newName);
         List<Department> GetDepartments();
-        void AddEmployee(string fullname, string position, int salary, string departmentname);
+        void AddEmployee(string name, string surname, string position, int salary, string departmentname);
 
-        void EditEmployee(string no, int salary, string position);
+        void EditEmployee(string no, string name, string surname, int salary, string position);
 
         void RemoveEmployee(string no, string departmentname);
 
-        string[] SearchEmployee(string search);
+       // string[] SearchEmployee(string search);
 
 
     }
