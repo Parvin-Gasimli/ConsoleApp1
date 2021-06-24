@@ -37,7 +37,8 @@ namespace ConsoleApp1.Models
            // No = departmentName.Trim().ToUpper()[0].ToString() + departmentName.Trim().ToUpper()[1].ToString() + TotalCount.ToString();
             No = departmentName.ToString().Trim().ToUpper().Substring(0, 2) + TotalCount.ToString();
             
-        }
+        } 
+
         public override string ToString()
         {
             return $"{No},{Salary},{DepartmentName},{Position},{FullName}";
