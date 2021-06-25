@@ -11,9 +11,11 @@ namespace ConsoleApp1.Services
         static ManagerOfHuman manager = new ManagerOfHuman();
         public static void AddDepartmentMenu()
         {
-            Console.WriteLine("Enter the departmentName");
+            Console.WriteLine("Enter the departmentName:");
             string departmentName = Console.ReadLine(); //string name, int workerlimit, double salarylimit
+            Console.WriteLine("enter the workerlimit:");
             int workerLimit = int.Parse(Console.ReadLine());
+            Console.WriteLine("enter the salaryLimit:");
             int salaryLimited = int.Parse(Console.ReadLine());
             try
             {
@@ -28,9 +30,11 @@ namespace ConsoleApp1.Services
         }///tring fullname, string position, int salary, string departmentname
         public static void AddEmployee()
         {
-            Console.WriteLine("Enter the Employee");
+            Console.WriteLine("Enter the fullname:");
             string fullName = Console.ReadLine();
+            Console.WriteLine("Enter the position:");
             string position = Console.ReadLine();
+            Console.WriteLine("enter the salary:");
             double salary = double.Parse(Console.ReadLine());
             string DepartmentName = Console.ReadLine();
             try
@@ -40,7 +44,7 @@ namespace ConsoleApp1.Services
             catch (Exception e)
             {
 
-                Console.WriteLine("Something went Wrong");
+                Console.WriteLine("Something went Wrong!!");
                 Console.WriteLine(e.Message);
             }
         }
@@ -48,8 +52,9 @@ namespace ConsoleApp1.Services
 
         public static void EditDepartaments()
         {
-            Console.WriteLine("Enter the EditDepartment");
+            Console.WriteLine("Enter the Department:");
             string name = Console.ReadLine();
+            Console.WriteLine("Enter the newDepartmentName:");
             string Newname = Console.ReadLine();
             try
             {
@@ -68,10 +73,13 @@ namespace ConsoleApp1.Services
         public static void EditEmployee()
         {
 
-            Console.WriteLine("Enter the Edit Employee");
+            Console.WriteLine("Enter the  No:");
             string no = Console.ReadLine();
+            Console.WriteLine("Enter the FullName:");
             string fullname = Console.ReadLine();
+            Console.WriteLine("Enter the salary:");
             double salary = double.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the position:");
             string position = Console.ReadLine();
             try
             {
@@ -103,8 +111,9 @@ namespace ConsoleApp1.Services
         //tring no, string departmentname)
         public static void RemoveEmployeeMenu()
         {
-            Console.WriteLine("Remove the employees");
+            Console.WriteLine("Enter the Name");
             string no = Console.ReadLine();
+            Console.WriteLine("Enter the DepartmentName");
             string departmentname = Console.ReadLine();
             try
             {
