@@ -8,41 +8,30 @@ namespace ConsoleApp1.Models
 {
     class Employee
     {
-        public static int TotalCount = 1000;
-
-        public string No { get; set; }
-        public string FullName;
-       
-       
-      
-
+        public static int TotalCount { get; set; } = 1000;
+        public string No;
+        public string FullName { get; set; }
         public string Position { get; set; }
-        public int Salary { get; set; }
+        public double Salary { get; set; }
         public string DepartmentName { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-
-
-        public Employee(string name, string surname, string position, int salary, string departmentName)
+       
+        public Employee(string fullname, string position, double salary, string departmentName)
 
         {
-            Name = name;
-            Surname = surname;
 
-            FullName = Name + " " + Surname;
+            FullName = fullname;
             Position = position;
             DepartmentName = departmentName;
             Salary = salary;
             TotalCount++;
            // No = departmentName.Trim().ToUpper()[0].ToString() + departmentName.Trim().ToUpper()[1].ToString() + TotalCount.ToString();
-            No = departmentName.ToString().Trim().ToUpper().Substring(0, 2) + TotalCount.ToString();
+            No = departmentName.ToString().Trim().ToUpper().Substring(0, 2) + TotalCount.ToString();//bu method bize departmantname 2 sozu ile totatl count birlesdirir.
             
         }
 
-        
-
+       
         public override string ToString()
         {
-            return $"Nomresi:{No},Maas:{Salary},Departament Adi:{DepartmentName},Vezifesi:{Position},Soyadi:{FullName}";
+            return $"Nomresi:{No}  Maas:{Salary}   Departament Adi:{DepartmentName}      Vezifesi:{Position}     Adi  ve  Soyadi:{FullName}";
         }
     }  }

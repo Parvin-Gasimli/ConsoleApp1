@@ -9,8 +9,8 @@ namespace ConsoleApp1.Models
     class Department
     {
         public string DepartmentName { get; set; }
-        public int WorkerLimit  { get; private set; }
-        public double SalaryLimit { get; private set; }
+        public int WorkerLimit  { get;  set; }
+        public double SalaryLimit { get;  set; }
         public List<Employee> Employees { get; set; }
         public string Name { get; internal set; }
 
@@ -18,7 +18,7 @@ namespace ConsoleApp1.Models
         {
             DepartmentName = Departmentname;
             WorkerLimit = worklimit;
-            SalaryLimit = SalaryLimit;
+            SalaryLimit = Salarylimit;
         }
 
 
@@ -37,7 +37,9 @@ namespace ConsoleApp1.Models
             return average;
             //calculation of the average
         }
+        
+        }
 
 
     }
-}
+
