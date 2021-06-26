@@ -12,6 +12,7 @@ namespace ConsoleApp1.Models
         public int WorkerLimit  { get;  set; }
         public double SalaryLimit { get;  set; }
         public List<Employee> Employees { get; set; }
+        public List<Department> Departments { get; set; }
         public string Name { get; internal set; }
 
         public Department(string Departmentname,int worklimit,double Salarylimit)

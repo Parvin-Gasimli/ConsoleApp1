@@ -24,7 +24,7 @@ namespace ConsoleApp1.Models
             DepartmentName = departmentName;
             Salary = salary;
             TotalCount++;
-           // No = departmentName.Trim().ToUpper()[0].ToString() + departmentName.Trim().ToUpper()[1].ToString() + TotalCount.ToString();
+           No = departmentName.Trim().ToUpper()[0].ToString() + departmentName.Trim().ToUpper()[1].ToString() + TotalCount.ToString();
             No = departmentName.ToString().Trim().ToUpper().Substring(0, 2) + TotalCount.ToString();//bu method bize departmantname 2 sozu ile totatl count birlesdirir.
             
         }

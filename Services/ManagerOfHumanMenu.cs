@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp1.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,12 +8,15 @@ using System.Threading.Tasks;
 namespace ConsoleApp1.Services
 {
     public class ManagerOfHumanMenu
-    {
+    {  //managerOfhumanmenu My goal in creating this manager ofHuman  is to have less code capacity in the program cs and more selectable readable code.
+
         static ManagerOfHuman manager = new ManagerOfHuman();
-        public static void AddDepartmentMenu()
+       
+        public static void AddDepartmentMenu()// cosnsole.readline user terefinden daxil olunmasin istediyimiz datalar ucun yazlb
         {
+
             Console.WriteLine("Enter the departmentName:");
-            string departmentName = Console.ReadLine(); //string name, int workerlimit, double salarylimit
+            string departmentName = Console.ReadLine(); 
             Console.WriteLine("enter the workerlimit:");
             int workerLimit = int.Parse(Console.ReadLine());
             Console.WriteLine("enter the salaryLimit:");
@@ -36,6 +40,7 @@ namespace ConsoleApp1.Services
             string position = Console.ReadLine();
             Console.WriteLine("enter the salary:");
             double salary = double.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the department Name");
             string DepartmentName = Console.ReadLine();
             try
             {
@@ -95,18 +100,19 @@ namespace ConsoleApp1.Services
         }
         public static void GetDepartmentsMenu()
         {
-            try
-            {
+             
+                      try
+                       {
                 foreach (var item in manager.GetDepartments())
-                {
-                    Console.WriteLine(item.DepartmentName);
-                }
-            }
+                      {
+                    Console.WriteLine(item.DepartmentName,item.CalcSalaryAverage());
+                       }
+                       }
             catch (Exception e)
-            {
-                Console.WriteLine("Something went wrong!");
+                       {
+                      Console.WriteLine("Something went wrong!");
                 Console.WriteLine(e.Message);
-            }
+                       }
         }
         //tring no, string departmentname)
         public static void RemoveEmployeeMenu()
@@ -133,13 +139,13 @@ namespace ConsoleApp1.Services
             {
                 foreach (var item in manager.GetEmployees())
                 {
-                    Console.WriteLine(item.FullName);
+                    Console.WriteLine(item.FullName,item.DepartmentName,item.Position,item.Salary);
                 }
             }
             catch (Exception e)
             {
 
-                Console.WriteLine("wrong the fulname");
+                Console.WriteLine("wrong the fulname","wrong the departmentName","wrong the position", "wring the salary");
                 Console.WriteLine(e.Message);
             }
 

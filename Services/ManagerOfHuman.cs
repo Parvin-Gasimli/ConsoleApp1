@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Services
 {
-    class ManagerOfHuman : IHumanResourceManager
+    class ManagerOfHuman : IHumanResourceManager //This class inherits all the data from the interface because it is not possible to write the body in the interface,
+                                                 //so in this class the body of the methods in the interface is written.
+                                                 //where we implement all the methods in the interface and write the bodies
     {
         public List<Department> Departments { get; set; }
         public List<Employee> Employees { get; set; }
@@ -25,7 +27,7 @@ namespace ConsoleApp1.Services
                 throw new ArgumentNullException("Name is empty");
             if (workerlimit <= 0)
                 throw new ArgumentNullException("Worker limit is less than zero");
-            if (salarylimit <= 250)
+            if (salarylimit <= 250) // check the salary limit
                 throw new ArgumentNullException("salarylimit is less than  250");
             Departments.Add(department);
         }
@@ -68,21 +70,23 @@ namespace ConsoleApp1.Services
 
             employee.Salary = salary;
             employee.Position = position;
+            employee.No = no;
+            employee.FullName = fullname;
         }
         public List<Department> GetDepartments()
         {
             if (Departments.Count == 0)
                 throw new KeyNotFoundException("List is empty");
-            return Departments.ToList();
+            return Departments.ToList<Department>();
         }
         public void RemoveEmployee(string no, string departmentname)//remove the employye the no and the departmentname
         {
             if (string.IsNullOrEmpty(no))
                 throw new ArgumentNullException("No can not be empty or null");
-            List<int> tempcheck = new List<int>() { };
+            List<int> tempcheck = new List<int>() { }; 
             foreach (var item in Departments)
             {
-                int index = item.Employees.FindIndex(s => s.No == no && s.DepartmentName == departmentname);//check the equals
+                int index = item.Employees.FindIndex(s => s.No == no && s.DepartmentName == departmentname);// created the new department name and change de old name
                 tempcheck.Add(index);
                 if (index > -1)
                 {
@@ -98,27 +102,27 @@ namespace ConsoleApp1.Services
         public List<Employee> GetEmployees()
         {
             List<Employee> Temp = new List<Employee>();
-            foreach (var item in Departments)
+            foreach (var item in Departments)// check the department ...after  item add the temp list
             {
                 foreach (var item1 in item.Employees)
                 {
                     Temp.Add(item1);
                 }
             }
-            if (Temp.Count == 0)
+            if (Temp.Count == 0) //if temp count equal de zero.show list is empty 
                 throw new KeyNotFoundException("List is empty");
-            return Temp.ToList();
+            return Temp.ToList<Employee>();
         }
         public void ResetNumber()
         {
-            int count = 1000;
+            int count = 1000; //count start the 1000:
             foreach (var item in Departments)
             {
                 foreach (var item1 in item.Employees)
                 {
                     count++;
-                    item1.No = item1.DepartmentName.Trim().ToString().ToUpper().Substring(0, 2) + item1.No.ToString();
-                    //item1.No = item1.DepartmentName[0].ToString().ToUpper() + item1.DepartmentName[1].ToString().ToUpper() + item1.No.ToString();
+                    item1.No = item1.DepartmentName.Trim().ToString().ToUpper().Substring(0, 2) + item1.No.ToString();   //substring method is add de second word (0.2) yeni o ci indexden baslayaraq 2 char goturur:::
+                    item1.No = item1.DepartmentName[0].ToString().ToUpper() + item1.DepartmentName[1].ToString().ToUpper() + item1.No.ToString();
                 }
             }
 

@@ -21,7 +21,7 @@ namespace ConsoleApp1.Services
 
          void RemoveEmployee(string no, string departmentname);
 
-       // string[] SearchEmployee(string search);
+      
 
 
     }
