@@ -30,7 +30,7 @@ namespace ConsoleApp1.Services
 
                 Console.WriteLine("Something went wrong!");
                 Console.WriteLine(e.Message);
-            }
+             }
         }///tring fullname, string position, int salary, string departmentname
         public static void AddEmployee()
         {

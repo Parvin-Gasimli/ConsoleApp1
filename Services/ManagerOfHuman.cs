@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Services
 {
-    class ManagerOfHuman : IHumanResourceManager //This class inherits all the data from the interface because it is not possible to write the body in the interface,
-                                                 //so in this class the body of the methods in the interface is written.
-                                                 //where we implement all the methods in the interface and write the bodies
+    class ManagerOfHuman : IHumanResourceManager 
+         //This class inherits all the data from the interface because it is not possible to write the body in the interface,
+        //so in this class the body of the methods in the interface is written.
+       //where we implement all the methods in the interface and write the bodies
     {
         public List<Department> Departments { get; set; }
         public List<Employee> Employees { get; set; }
@@ -57,7 +58,7 @@ namespace ConsoleApp1.Services
         {
             if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(newName))
                 throw new ArgumentNullException("Department name can not be empty or null");
-            var department = Departments.Find(s => s.Name == name);
+            var department = Departments.Find(s => s.DepartmentName == newName);
             if (department == null)
                 throw new ArgumentNullException("There is no such department");
             department.Name = newName;
