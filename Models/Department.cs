@@ -17,6 +17,7 @@ namespace ConsoleApp1.Models
 
         public Department(string Departmentname,int worklimit,double Salarylimit)
         {
+            Employees = new List<Employee>();
             DepartmentName = Departmentname;
             WorkerLimit = worklimit;
             SalaryLimit = Salarylimit;
@@ -27,15 +28,26 @@ namespace ConsoleApp1.Models
         {
             
            
-            double average =0;
+   double average =0;
             double sum = 0;
             foreach (var item in Employees)
             {
                 sum += item.Salary;
             }
-            
-            average = sum / Employees.Count;
-            return average;
+            if (Employees.Count != 0)
+
+            {
+                average = sum / Employees.Count;
+                return average;
+            }
+            else
+            {
+                return 0;
+            }
+            //if wirkerlimit is zero 
+
+
+           
             //calculation of the average
         }
         

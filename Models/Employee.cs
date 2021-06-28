@@ -8,16 +8,19 @@ namespace ConsoleApp1.Models
 {
     class Employee
     {
+     
         public static int TotalCount { get; set; } = 1000;
         public string No;
         public string FullName { get; set; }
         public string Position { get; set; }
+        public List<Employee> Employees { get; set; }
         public double Salary { get; set; }
         public string DepartmentName { get; set; }
        
         public Employee(string fullname, string position, double salary, string departmentName)
 
         {
+            Employees = new List<Employee>();
 
             FullName = fullname;
             Position = position;
@@ -32,6 +35,6 @@ namespace ConsoleApp1.Models
        
         public override string ToString()
         {
-            return $"Nomresi:{No}  Maas:{Salary}   Departament Adi:{DepartmentName}      Vezifesi:{Position}     Adi  ve  Soyadi:{FullName}";
+            return $"Nomresi:{No} / Maas:{Salary}   /Departament Adi:{DepartmentName}      /Vezifesi:{Position}     /Adi  ve  Soyadi:{FullName}";
         }
     }  }

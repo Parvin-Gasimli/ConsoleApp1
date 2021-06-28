@@ -47,7 +47,7 @@ namespace ConsoleApp1
 
                         break;
                     case "1.3":
-                        ManagerOfHumanMenu.EditDepartaments();
+                        ManagerOfHumanMenu.EditDepartamentsMenu();
                         break;
                     case "2.1":
                         ManagerOfHumanMenu.EditEmployee();

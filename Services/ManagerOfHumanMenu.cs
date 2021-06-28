@@ -8,15 +8,16 @@ using System.Threading.Tasks;
 namespace ConsoleApp1.Services
 {
     public class ManagerOfHumanMenu
-    {  //managerOfhumanmenu My goal in creating this manager ofHuman  is to have less code capacity in the program cs and more selectable readable code.
+    {
+        //managerOfhumanmenu My goal in creating this manager ofHuman  is to have less code capacity in the program cs and more selectable readable code.
 
         static ManagerOfHuman manager = new ManagerOfHuman();
-       
-        public static void AddDepartmentMenu()// cosnsole.readline user terefinden daxil olunmasin istediyimiz datalar ucun yazlb
+
+        public static void AddDepartmentMenu()
         {
 
-            Console.WriteLine("Enter the departmentName:");
-            string departmentName = Console.ReadLine(); 
+            Console.WriteLine("Enter the departmentName:");//cosnsole.readline user terefinden daxil olunmasin istediyimiz datalar ucun yazlb
+            string departmentName = Console.ReadLine(); //string name, int workerlimit, double salarylimit
             Console.WriteLine("enter the workerlimit:");
             int workerLimit = int.Parse(Console.ReadLine());
             Console.WriteLine("enter the salaryLimit:");
@@ -30,7 +31,7 @@ namespace ConsoleApp1.Services
 
                 Console.WriteLine("Something went wrong!");
                 Console.WriteLine(e.Message);
-             }
+            }
         }///tring fullname, string position, int salary, string departmentname
         public static void AddEmployee()
         {
@@ -55,7 +56,7 @@ namespace ConsoleApp1.Services
         }
         //string name, string newName
 
-        public static void EditDepartaments()
+        public static void EditDepartamentsMenu()
         {
             Console.WriteLine("Enter the Department:");
             string name = Console.ReadLine();
@@ -100,24 +101,24 @@ namespace ConsoleApp1.Services
         }
         public static void GetDepartmentsMenu()
         {
-             
-                      try
-                       {
+
+            try
+            {
                 foreach (var item in manager.GetDepartments())
-                      {
-                    Console.WriteLine(item.DepartmentName,item.CalcSalaryAverage());
-                       }
-                       }
+                {
+                    Console.WriteLine($"  Department name: {item.DepartmentName} | Average salary: {item.CalcSalaryAverage()} | Number of employees: {item.Employees.Count}");
+                }
+            }
             catch (Exception e)
-                       {
-                      Console.WriteLine("Something went wrong!");
+            {
+                Console.WriteLine("Something went wrong!");
                 Console.WriteLine(e.Message);
-                       }
+            }
         }
-        //tring no, string departmentname)
+        //string no, string departmentname)
         public static void RemoveEmployeeMenu()
         {
-            Console.WriteLine("Enter the Name");
+            Console.WriteLine("Enter the No");
             string no = Console.ReadLine();
             Console.WriteLine("Enter the DepartmentName");
             string departmentname = Console.ReadLine();
@@ -139,17 +140,35 @@ namespace ConsoleApp1.Services
             {
                 foreach (var item in manager.GetEmployees())
                 {
-                    Console.WriteLine(item.FullName,item.DepartmentName,item.Position,item.Salary);
+                    Console.WriteLine($"ID: {item.No} | Name: {item.FullName} | Position: {item.Position} | Salary: {item.Salary} | Department name: {item.DepartmentName}");
                 }
             }
             catch (Exception e)
             {
 
-                Console.WriteLine("wrong the fulname","wrong the departmentName","wrong the position", "wring the salary");
+                Console.WriteLine("wrong the fulname");
                 Console.WriteLine(e.Message);
             }
 
 
         }
+        public static void GetEmployeesByDepartment()
+        {
+            Console.WriteLine("Enter the name of the department");
+            string departmentname = Console.ReadLine();
+            try
+            {
+                foreach (var item in manager.GetEmployeesByDepartment(departmentname))
+                {
+                    Console.WriteLine($"ID: {item.No} | Name: {item.FullName} | Position: {item.Position} | Salary: {item.Salary}");
+                }
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
+        }
     }
 }
+    
