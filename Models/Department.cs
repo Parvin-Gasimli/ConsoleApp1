@@ -28,7 +28,7 @@ namespace ConsoleApp1.Models
         {
             
            
-   double average =0;
+         double average =0;
             double sum = 0;
             foreach (var item in Employees)
             {

@@ -146,7 +146,7 @@ namespace ConsoleApp1.Services
             catch (Exception e)
             {
 
-                Console.WriteLine("wrong the fulname");
+                Console.WriteLine("wrong the fullname");
                 Console.WriteLine(e.Message);
             }
 

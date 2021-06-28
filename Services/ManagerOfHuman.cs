@@ -16,8 +16,9 @@ class ManagerOfHuman : IHumanResourceManager
 
     public ManagerOfHuman()
     {
-        Employees = new List<Employee>();
-        Departments = new List<Department>();
+        Employees = new List<Employee>();// emplotyers add the employers list
+
+        Departments = new List<Department>();//Departmetns data add the departments list 
     }
     public void AddDepartment(string name, int workerlimit, int salarylimit)// using isNullorEmpty //using type of exception    
     {
@@ -48,11 +49,12 @@ class ManagerOfHuman : IHumanResourceManager
         var department = Departments.Find(s => s.DepartmentName == departmentname);
         if (department == null)
             throw new ArgumentNullException("There is no such department");
+        
 
 
         department.Employees.Add(employee);
     }
-    public void EditDepartaments(string name, string newName)
+    public void EditDepartaments(string name, string newName)   //old name turn the NewNAME
     {
         if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(newName))
             throw new ArgumentNullException("Department name can not be empty or null");
@@ -66,9 +68,11 @@ class ManagerOfHuman : IHumanResourceManager
         if (salary < 250)
             throw new ArgumentOutOfRangeException("salary is less than 250");
         var employee = Employees.Find(a => a.No == no);
+        
 
         employee.Salary = salary;
         employee.Position = position;
+        employee.FullName = fullname;
     }
     public List<Department> GetDepartments()
     {
@@ -99,7 +103,7 @@ class ManagerOfHuman : IHumanResourceManager
     public List<Employee> GetEmployees()
     {
         List<Employee> Temp = new List<Employee>();
-        foreach (var item in Departments)
+        foreach (var item in Departments)// dovr icinde dovr olmaq ve ordakilari employer listine include etmek  lazmdir
         {
             foreach (var item1 in item.Employees)
             {
@@ -110,10 +114,10 @@ class ManagerOfHuman : IHumanResourceManager
             throw new KeyNotFoundException("List is empty");
         return Temp.ToList();
     }
-    public List<Employee> GetEmployeesByDepartment(string departmentname)
+    public List<Employee> GetEmployeesByDepartment(string departmentname) 
     {
         var department = Departments.Find(a => a.DepartmentName == departmentname);
-        if (department == null)
+        if (department == null) //whether if department is null show  threre is no such a department
             throw new ArgumentNullException("There is no such department!");
         return department.Employees.ToList();
     }
