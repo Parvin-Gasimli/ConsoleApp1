@@ -135,24 +135,18 @@ namespace ConsoleApp1.Services
         //string no, string departmentname)
         public static void RemoveEmployeeMenu()
         {
-            Console.WriteLine("Enter the No");
+            
+                Console.WriteLine("Enter the No");
             string no = Console.ReadLine();
             Console.WriteLine("Enter the DepartmentName");
             string departmentname = Console.ReadLine();
-            try
-            {
-                manager.RemoveEmployee(no, departmentname);
-            }
-            catch (Exception e)
-            {
-
-                Console.WriteLine("dont remove the employee");
-                Console.WriteLine(e.Message);
-            }
+           manager.RemoveEmployee(no, departmentname);
+                  
+            
         }
         public static void GetEmployees()
         {
-            Console.WriteLine("Get the name");
+            Console.WriteLine("Enter the name");
             try
             {
                 foreach (var item in manager.GetEmployees())

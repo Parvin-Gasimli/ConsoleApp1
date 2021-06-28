@@ -77,8 +77,7 @@ class ManagerOfHuman : IHumanResourceManager
         employee.Position = position;
 
     }
-
-
+    
       
     
     public List<Department> GetDepartments()
@@ -96,16 +95,15 @@ class ManagerOfHuman : IHumanResourceManager
         {
             int index = item.Employees.FindIndex(s => s.No == no && s.DepartmentName == departmentname);//check the equals
             tempcheck.Add(index);
-            if (index >=0)
+            if (index >= 0)
             {
                 item.Employees.RemoveAt(index);
             }
         }
         if (tempcheck.Sum() / tempcheck.Count == 0)
         {
-            throw new KeyNotFoundException("There is no such employee with a given no");
+            throw new KeyNotFoundException("Removed");
         }
-        RemoveEmployee(no, departmentname);
     }
     public List<Employee> GetEmployees()
     {
