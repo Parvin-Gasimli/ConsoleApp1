@@ -96,12 +96,12 @@ class ManagerOfHuman : IHumanResourceManager
         {
             int index = item.Employees.FindIndex(s => s.No == no && s.DepartmentName == departmentname);//check the equals
             tempcheck.Add(index);
-            if (index > -1)
+            if (index >=0)
             {
                 item.Employees.RemoveAt(index);
             }
         }
-        if (tempcheck.Sum() / tempcheck.Count == -1)
+        if (tempcheck.Sum() / tempcheck.Count == 0)
         {
             throw new KeyNotFoundException("There is no such employee with a given no");
         }
