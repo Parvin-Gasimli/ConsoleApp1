@@ -68,12 +68,19 @@ class ManagerOfHuman : IHumanResourceManager
         if (salary < 250)
             throw new ArgumentOutOfRangeException("salary is less than 250");
         var employee = Employees.Find(a => a.No == no);
-        
+       
+        if (no == null)
+            throw new ArgumentNullException("Worker doesn't exist");
+
 
         employee.Salary = salary;
         employee.Position = position;
-        employee.FullName = fullname;
+
     }
+
+
+      
+    
     public List<Department> GetDepartments()
     {
         if (Departments.Count == 0)

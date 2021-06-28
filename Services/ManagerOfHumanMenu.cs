@@ -76,20 +76,37 @@ namespace ConsoleApp1.Services
         }
         //string no, string fullname , int salary, string position)
 
-        public static void EditEmployee()
-        {
+        public static void EditEmployee() //CHANGE THE SALARY POSITION 
+        {     
 
-            Console.WriteLine("Enter the  No:");
-            string no = Console.ReadLine();
-            Console.WriteLine("Enter the FullName:");
-            string fullname = Console.ReadLine();
-            Console.WriteLine("Enter the salary:");
-            double salary = double.Parse(Console.ReadLine());
-            Console.WriteLine("Enter the position:");
-            string position = Console.ReadLine();
+          
             try
             {
-                manager.EditEmployee(no, fullname, salary, position);
+                foreach (Department department in manager.Departments)
+                {
+                    foreach (Employee employee in department.Employees)
+                    {
+                        Console.WriteLine("Enter ID of the worker you want to edit.");
+                        string NO = Console.ReadLine();
+                        if (employee.No == NO)
+                        {
+
+                            Console.WriteLine($"ID: {employee.No} | Name: {employee.FullName} | Position: {employee.Position} | Salary: {employee.Salary}");
+                            Console.WriteLine("Enter new Position");
+                            string newposition = Console.ReadLine();
+                            Console.WriteLine("Enter new Salary");
+                            double newsalary = double.Parse(Console.ReadLine());
+
+                            Console.WriteLine($"{NO}, New Salary: {newsalary}, New Position: {newposition}");
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("Worker doesn't exist");
+                        }
+
+                    }
+                }
             }
             catch (Exception e)
             {
