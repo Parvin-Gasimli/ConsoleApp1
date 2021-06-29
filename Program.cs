@@ -8,7 +8,7 @@ using ConsoleApp1.Services;
 
 
 
-namespace ConsoleApp1 //
+namespace ConsoleApp1 
 {
     class Program
     {
